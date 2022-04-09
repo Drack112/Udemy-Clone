@@ -1,21 +1,12 @@
-# This is an sample workflow for learning  working-directory option
- 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
- 
 name: CI
- 
+
+on: [push]
+
 jobs:
-  phpunit:
+  unit:
     runs-on: ubuntu-latest
- 
     steps:
-    - uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: Run Django CI
-      run: pip install -r requirements
-      working-directory: backend
+      - uses: actions/checkout@v1
+      - name: Setup Directory
+        working-directory: backend
+        run: cp .env.example .env
