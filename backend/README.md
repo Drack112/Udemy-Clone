@@ -32,7 +32,8 @@ Teste de em realizar a regra de negocio do serviço de cursos Udemy em Django, e
  ### 💻 Pré-requisitos    
  Antes de começar, verifique se você atendeu aos seguintes requisitos:    
     
-- Você instalou a versão mais recente de `< Docker/ Python>` - Você tem uma máquina `< Windows / Linux / Mac >`.    
+- Você instalou a versão mais recente de `< Docker/ Python>` 
+- Você tem uma máquina `< Windows / Linux / Mac >`.    
 - Você possui um `< Editor de código ou IDE / Gerenciador de banco de dados >`.    
     
 ## ☕ Pequena ajuda    
