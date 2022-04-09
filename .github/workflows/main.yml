@@ -1,14 +1,20 @@
-name: App Workflows
-
+# This is an sample workflow for learning  working-directory option
+ 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
-
+    branches: [ master ]
+ 
+name: CI
+ 
 jobs:
-  django_app:
+  phpunit:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
+ 
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Run Django CI
+      working-directory: backend
