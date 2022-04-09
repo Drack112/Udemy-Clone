@@ -1,13 +1,10 @@
+from courses.models import Course
 from django.db import models
 from django.contrib.auth.models import (
-    BaseUserManager,
     AbstractBaseUser,
+    BaseUserManager,
     PermissionsMixin,
 )
-
-from courses.models import Course
-
-# Create your models here.
 
 
 class UserManager(BaseUserManager):
@@ -64,14 +61,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_author = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
+    s_superuser = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name"]
 
     objects = UserManager()
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
 
     def get_all_courses(self):
@@ -79,4 +76,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         for course in self.paid_course.all():
             courses.append(course.course_uuid)
 
-            return courses
+        return courses
