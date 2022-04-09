@@ -17,4 +17,5 @@ jobs:
       with:
         fetch-depth: 1
     - name: Run Django CI
+      run: pip install -r requirements
       working-directory: backend
